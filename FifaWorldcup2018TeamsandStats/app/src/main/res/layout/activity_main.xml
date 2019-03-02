@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary"
+    >
+
+    <technolifestyle.com.imageslider.FlipperLayout
+        android:id="@+id/flipper_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="180dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/headView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flipper_layout"
+        app:cardElevation="8dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="3dp"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Fifa World Cup 2018 teams &amp; stats"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:background="@color/colorAccent"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        />
+    </android.support.v7.widget.CardView>
+
+    <GridView
+        android:id="@+id/teamsGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headView"
+        android:layout_above="@+id/fragment_ads"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:padding="8dp"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        >
+
+    </GridView>
+
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</RelativeLayout>

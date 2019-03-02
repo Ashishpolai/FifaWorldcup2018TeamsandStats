@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".FirstslideActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/headSecSlideView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:cardElevation="8dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="3dp"
+        android:padding="5dp"
+        android:layout_margin="8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fifalightgrey">
+
+            <ImageView
+                android:id="@+id/btn_back_secslide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                />
+
+            <TextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/txt_heading_player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="World cup 2018 Missing Teams\n( what went wrong? )"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_centerInParent="true"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:textColor="@color/colorPrimary"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headSecSlideView"
+        android:layout_above="@+id/fragment_ads"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/imageViewsec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+
+        android:layout_centerHorizontal="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="3dp"
+        >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/failed_teams"
+        android:scaleType="fitXY"
+        />
+    </android.support.v7.widget.CardView>
+
+<TextView
+    android:id="@+id/txtListsec"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageViewsec"
+    android:text="@string/secslidelist"
+    android:textSize="17sp"
+    android:textColor="@color/fifadarkgrey"
+    android:textStyle="bold"
+    android:fontFamily="serif-monospace"
+android:padding="8dp"
+    />
+
+    <TextView
+        android:id="@+id/txtListlast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtListsec"
+        android:text="@string/secslidelast"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="serif-monospace"
+        android:padding="8dp"
+        />
+        </RelativeLayout>
+    </ScrollView>
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</RelativeLayout>

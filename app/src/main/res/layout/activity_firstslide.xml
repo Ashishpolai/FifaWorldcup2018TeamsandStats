@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".FirstslideActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/headFirstSlideView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:cardElevation="8dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="3dp"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fifalightgrey">
+
+            <ImageView
+                android:id="@+id/btn_back_firstslide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                />
+
+            <TextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/txt_heading_player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Messi VS Ronaldo\n( The last chance )"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_centerInParent="true"
+                android:padding="8dp"
+                android:textColor="@color/colorPrimary"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/headFirstSlideView"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="3dp"
+        >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/ronaldomessi"
+        android:scaleType="fitXY"
+        />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
