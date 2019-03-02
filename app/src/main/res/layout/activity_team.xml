@@ -117,6 +117,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/team_detailsview"
+        android:layout_above="@+id/fragment_ads"
         android:columnWidth="140dp"
         android:gravity="center"
         android:numColumns="auto_fit"
@@ -126,4 +127,14 @@
         android:verticalSpacing="8dp"
         >
     </GridView>
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

@@ -20,7 +20,10 @@
         </activity>
         <activity android:name=".TeamActivity" />
         <activity android:name=".PlayerActivity" />
-        <activity android:name=".FirstslideActivity"></activity>
+        <activity android:name=".FirstslideActivity"/>
+        <activity android:name=".SecslideActivity"/>
+        <activity android:name=".ThirdslideActivity"/>
+        <activity android:name=".FourthslideActivity"/>
     </application>
 
 </manifest>

@@ -3,6 +3,8 @@ package com.asisdroid.fifaworldcup2018teamsandstats;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +24,9 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class TeamActivity extends AppCompatActivity {
 
@@ -30,7 +35,7 @@ public class TeamActivity extends AppCompatActivity {
     final String playerUrlPrefix = "https://docs.google.com/uc?id=";
     Teams teamObj;
     Players[] playerObjArray;
-
+    private InterstitialAd mInterstitialAd;
     public static TextView txtHeading, txtTeamDetails, wikiLink;
     public static ImageView  imgFlag, btnBack;
 
@@ -40,6 +45,14 @@ public class TeamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_team);
 
         getSupportActionBar().hide();
+
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.admobInterstetialunitID));
+
+        if(checkInternetConenction()) {
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        }
 
         txtHeading = (TextView) findViewById(R.id.txt_heading);
         txtTeamDetails = (TextView) findViewById(R.id.txt_team_details);
@@ -170,5 +183,76 @@ public class TeamActivity extends AppCompatActivity {
         TextView txtPlayerName, txtPlayerApps, txtPlayerGoals;
         ImageView teamPlayerPic;
         CardView colorFullLayout;
+    }
+
+
+    private boolean checkInternetConenction() {
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec
+                =(ConnectivityManager)getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        NetworkInfo info = connec.getActiveNetworkInfo();
+
+        // Check for network connections
+        if ( connec.getNetworkInfo(0).getState() ==
+                android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() ==
+                        android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() ==
+                        android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED ) {
+            return true;
+        }else if (
+                connec.getNetworkInfo(0).getState() ==
+                        android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() ==
+                                android.net.NetworkInfo.State.DISCONNECTED  ) {
+
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(checkInternetConenction()){
+            if(mInterstitialAd.isLoaded()){
+                mInterstitialAd.show();
+                mInterstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdLoaded() {
+                        // Code to be executed when an ad finishes loading.
+
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(int errorCode) {
+                        // Code to be executed when an ad request fails.
+                    }
+
+                    @Override
+                    public void onAdOpened() {
+                        // Code to be executed when the ad is displayed.
+                    }
+
+                    @Override
+                    public void onAdLeftApplication() {
+                        // Code to be executed when the user has left the app.
+                    }
+
+                    @Override
+                    public void onAdClosed() {
+                        // Code to be executed when when the interstitial ad is closed.
+                        finish();
+                    }
+                });
+            }
+            else{
+                super.onBackPressed();
+            }
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 }

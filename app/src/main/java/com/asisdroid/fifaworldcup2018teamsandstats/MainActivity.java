@@ -18,6 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -75,25 +78,24 @@ public class MainActivity extends AppCompatActivity {
             view.setOnFlipperClickListener(new FlipperView.OnFlipperClickListener() {
                 @Override
                 public void onFlipperClick(FlipperView flipperView) {
-                    Toast.makeText(MainActivity.this
-                            , "Here " + (flipperLayout.getCurrentPagePosition() + 1)
-                            , Toast.LENGTH_SHORT).show();
-                    switch (flipperLayout.getCurrentPagePosition() + 1){
-                        case 1:{
+                    int x = flipperLayout.getCurrentPagePosition();
+                        if(x==0){
                             Intent firstSlide = new Intent(MainActivity.this, FirstslideActivity.class);
                             startActivity(firstSlide);
                         }
-                        case 2:{
-
+                        else if(x==1){
+                            Intent firstSlide = new Intent(MainActivity.this, SecslideActivity.class);
+                            startActivity(firstSlide);
                         }
-                        case 3:{
-
+                        else if(x==2){
+                            Intent firstSlide = new Intent(MainActivity.this, ThirdslideActivity.class);
+                            startActivity(firstSlide);
                         }
-                        case 4:{
-
+                        else if(x==3){
+                            Intent firstSlide = new Intent(MainActivity.this, FourthslideActivity.class);
+                            startActivity(firstSlide);
                         }
                     }
-                }
             });
         }
     }
@@ -151,7 +153,13 @@ public class MainActivity extends AppCompatActivity {
                 holder.txtTeamName.setText(teamObj.getTeamName().substring(0,8)+".."+"\n"+"(Apps:"+teamObj.getTeamAppearances()+")");
             }*/
             holder.txtTeamWins.setText(teamObj.getTeamTitles());
-            Glide.with(MainActivity.this).load(getResources().getDrawable(teamObj.getTeamFlag())).into(holder.teamFLagDemo);
+            try {
+                Glide.with(MainActivity.this).load(getResources().getDrawable(teamObj.getTeamFlag())).transition(DrawableTransitionOptions.withCrossFade()).
+                        into(holder.teamFLagDemo);
+            }
+            catch (Exception e){
+
+            }
             holder.colorFullLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -15,7 +15,7 @@
         app:cardElevation="8dp"
         android:layout_centerHorizontal="true"
         app:cardCornerRadius="3dp"
-        android:padding="8dp"
+        android:padding="5dp"
         android:layout_margin="8dp"
         >
         <RelativeLayout
@@ -45,10 +45,22 @@
                 android:textSize="17sp"
                 android:layout_centerInParent="true"
                 android:padding="8dp"
+                android:layout_margin="8dp"
                 android:textColor="@color/colorPrimary"
                 />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headFirstSlideView"
+        android:layout_above="@+id/fragment_ads"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
 
     <android.support.v7.widget.CardView
         android:id="@+id/imageView"
@@ -56,7 +68,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:layout_margin="8dp"
-        android:layout_below="@+id/headFirstSlideView"
+
         android:layout_centerHorizontal="true"
         app:cardElevation="8dp"
         app:cardCornerRadius="3dp"
@@ -68,4 +80,88 @@
         android:scaleType="fitXY"
         />
     </android.support.v7.widget.CardView>
+
+<TextView
+    android:id="@+id/txtList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageView"
+    android:text="@string/ronldomessilist"
+    android:textSize="17sp"
+    android:textColor="@color/fifadarkgrey"
+    android:textStyle="bold"
+    android:fontFamily="serif-monospace"
+android:padding="8dp"
+    />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/txtQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fifalightgrey"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/txtList"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="3dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="italic"
+            android:fontFamily="serif-monospace"
+            android:layout_margin="5dp"
+            android:text="@string/frstslidequote"
+            />
+    </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtQuote"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="serif-monospace"
+                android:layout_margin="8dp"
+                android:text="@string/frstslidebelow"
+                />
+            <TextView
+                android:id="@+id/eventsbelow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/events"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="serif-monospace"
+                android:layout_margin="8dp"
+                android:text="@string/frtsslidelast"
+                />
+            <TextView
+                android:id="@+id/eventsbelowlast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/eventsbelow"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="serif-monospace"
+                android:layout_margin="8dp"
+                android:text="@string/frstslidelastttt"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

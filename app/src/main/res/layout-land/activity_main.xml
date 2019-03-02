@@ -12,7 +12,9 @@
         android:id="@+id/flipper_layout"
         android:layout_width="200dp"
         android:layout_alignParentTop="true"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fragment_ads"
+        />
 
     <android.support.v7.widget.CardView
         android:id="@+id/headView"
@@ -54,7 +56,19 @@
         android:padding="8dp"
         android:horizontalSpacing="8dp"
         android:verticalSpacing="8dp"
+        android:layout_above="@+id/fragment_ads"
         >
 
     </GridView>
+
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

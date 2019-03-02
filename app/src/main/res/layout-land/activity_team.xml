@@ -67,12 +67,21 @@
                 />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-
+<ScrollView
+    android:id="@+id/sideView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/headView"
+    android:layout_above="@+id/fragment_ads"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/img_flag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/headView"
+
         android:src="@drawable/argentina"
         android:layout_alignParentLeft="true"
         android:layout_margin="8dp"
@@ -85,7 +94,6 @@
         android:layout_below="@+id/img_flag"
         app:cardElevation="8dp"
         app:cardCornerRadius="5dp"
-        android:layout_alignRight="@+id/img_flag"
         android:labelFor="@+id/img_flag"
         android:layout_margin="8dp"
         >
@@ -106,14 +114,16 @@
             />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-
+    </RelativeLayout>
+</ScrollView>
 
     <GridView
         android:id="@+id/playersGridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/headView"
-        android:layout_toRightOf="@+id/img_flag"
+        android:layout_above="@+id/fragment_ads"
+        android:layout_toRightOf="@+id/sideView"
         android:layout_alignParentRight="true"
         android:columnWidth="120dp"
         android:gravity="center"
@@ -124,4 +134,15 @@
         android:verticalSpacing="8dp"
         >
     </GridView>
+
+    <!--ADS LAYOUT-->
+    <fragment
+        android:name="com.asisdroid.fifaworldcup2018teamsandstats.FragmentAd"
+        android:id="@+id/fragment_ads"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>
