@@ -201,10 +201,10 @@ A winner of six Bundesliga titles and the Champions League, Alabas international
 
         <b><i>All times listed BST – British Summer Time</i></b>
     </string>
-     <string name="admobunitID">ca-app-pub-1629039137396721/1380257447</string>  <!--ACTUAL ADMOB UNIT-->
+     <string name="admobunitID">ca-app-pub-2100705004057732/2753114053</string>  <!--ACTUAL ADMOB UNIT-->
     <!--<string name="admobunitID">ca-app-pub-3940256099942544/6300978111</string>   &lt;!&ndash;DUMMY ADMOB UNIT&ndash;&gt;-->
-    <string name="admobInterstetialunitID">ca-app-pub-1629039137396721/2118624048</string><!--ACTUAL ADMOB INTERSTETIAL UNIT-->
+    <string name="admobInterstetialunitID">ca-app-pub-2100705004057732/1934856401</string><!--ACTUAL ADMOB INTERSTETIAL UNIT-->
     <!--<string name="admobInterstetialunitID">ca-app-pub-3940256099942544/1033173712</string> &lt;!&ndash;DUMMY INTERSTETIAL ADMOB UNIT&ndash;&gt;-->
-    <string name="admobappID">ca-app-pub-1629039137396721~3459625879</string>
+    <string name="admobappID">ca-app-pub-2100705004057732~8197012425</string>
 </resources>
 
